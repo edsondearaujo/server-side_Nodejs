@@ -2,17 +2,25 @@ var rectangle = require('./rectangle')
 
 function solveRect(l,b) {
     console.log("Solving for rectangle with l = " + l +"m" + ", and b = " + b + "m");
-    if( l <= 0 || b <= 0){
-        console.log("Rectangle dimensions should be greater than zero: l = " + l + ", and b = " + b)
-    }
-    else{
-        console.log("The area of the rectangle is " + rectangle.area(l,b)+"m²");
-        console.log("The perimeter of the rectangle is " + rectangle.perimeter(l,b)+"m"+"\n");
-    }
+
+    rectangle(l,b, (err, rect) => {
+        if(err){
+            console.log("ERROR: ", err.message);
+        }
+        else{
+            console.log("The area of the rectangle of dimensions for the length 'l' = " + l + " and width 'b' = " + b 
+            + " is " + rect.area() +"m²"),
+            console.log("The perimeter of the rectangle of dimensions for the length 'l' = " + l + " and width 'b' = " + b 
+            + " is " + rect.perimeter() +"m");
+
+        }
+    });
+    console.log("This statement is after the call to rectangle()." + "\n")
 }
 
+
 // input example
-solveRect(50,50);
-solveRect(25,50);
-solveRect(30,30);
-solveRect(20,20);
+solveRect(10,5);
+solveRect(20,15);
+solveRect(30,20);
+solveRect(15,0);
