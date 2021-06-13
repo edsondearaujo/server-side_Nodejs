@@ -10,4 +10,5 @@ This repository is destined of the study the development of one server side usin
 - MongoDb
 
 # References
-[Serve-side Development with NodeJs, Express and MongoDB](https://www.coursera.org/learn/server-side-nodejs)
+- [Node Modules](https://nodejs.org/api/modules.html)
+- [Serve-side Development with NodeJs, Express and MongoDB](https://www.coursera.org/learn/server-side-nodejs)
